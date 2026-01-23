@@ -1,0 +1,35 @@
+{
+    "targetUrl": "https://v.wjx.cn/vm/your-survey-id.aspx",
+    "numb": 3,
+    "answers": {
+        "1": [
+            {
+                "id": 1,
+                "text": "选项1",
+                "weight": 5
+            },
+            {
+                "id": 2,
+                "text": "选项2",
+                "weight": 3
+            }
+        ],
+        "2": [
+            {
+                "id": 1,
+                "text": "满意",
+                "weight": 7
+            },
+            {
+                "id": 2,
+                "text": "不满意",
+                "weight": 1
+            }
+        ],
+        "8": [
+            "还可以",
+            "没有意见",
+            "挺好的"
+        ]
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "autoask",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon --exec tsx src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "survey",
+        "automation",
+        "puppeteer",
+        "questionnaire",
+        "auto-fill"
+    ],
+    "author": "",
+    "license": "MIT",
+    "description": "基于 Puppeteer 的问卷自动填写工具，支持自定义答案权重和随机选择",
+    "dependencies": {
+        "puppeteer": "^24.36.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.0.10",
+        "@types/puppeteer": "^5.4.7",
+        "nodemon": "^3.1.11",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    }
+}
