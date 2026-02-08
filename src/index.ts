@@ -24,7 +24,13 @@ function sleep(s: number): Promise<void> {
 
 async function runOnce(page: puppeteer.Page, config: any) {
     try {
+        await page.evaluateOnNewDocument(() => {
+            localStorage.clear();
+        });
         await page.goto(config.targetUrl, { waitUntil: 'networkidle0', timeout: 30000 });
+        await page.evaluate(() => {
+            localStorage.clear();
+        })
         const startBtn = await page.$(`#slideChunk`);
         if (startBtn) {
             await startBtn.click();
@@ -74,7 +80,7 @@ async function main() {
     const browser = await puppeteer.launch({
         headless: false,
     });
-    const page = await browser.newPage();
+
     const numb = config.numb;
     let successCount = 0;
     let failCount = 0;
@@ -82,6 +88,8 @@ async function main() {
 
     for (let i = 0; i < numb; i++) {
         try {
+            // const context = await browser.createIncognitoBrowserContext();
+            const page = await browser.newPage();
             await runOnce(page, config);
             successCount++;
             const progress = ((i + 1) / numb * 100).toFixed(2);
